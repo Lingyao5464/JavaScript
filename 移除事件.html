@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 150px;
+        height: 150px;
+        background: pink;
+    }
+</style>
+
+<body>
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+    <script>
+        divs = document.querySelectorAll('div');
+        divs[0].addEventListener('click', fn); //里面的fn不加括号，直接代表了fn整个函数。
+        divs[1].addEventListener('click', fn1);
+
+        function fn() {
+            alert('111');
+            divs[0].removeEventListener('click', fn);
+        }
+
+        function fn1() {
+            alert('222');
+            divs[1].removeEventListener('click', fn1);
+        }
+    </script>
+</body>
+
+</html>

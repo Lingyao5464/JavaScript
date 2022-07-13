@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <img src="./img/blue.png" alt="">
+    <script>
+        var img = document.querySelector('img');
+        document.addEventListener('mousemove', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            img.style.left = x - 23 + 'px';
+            img.style.top = y - 23 + 'px';
+        })
+    </script>
+</body>
+
+</html>

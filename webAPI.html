@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div {
+        background: #000;
+        color: white;
+    }
+</style>
+
+<body>
+    <!-- <div class="a">aaaaa</div>
+    <div class="b">bbbbb</div>
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul> -->
+    <!-- <button id="btn">abc</button> -->
+    <!-- <div id="abc">aaa</div> -->
+    <button id="btn">点击显示时间</button>
+    <div>无时间</div>
+    <p></p>
+    <script>
+        // var a = document.getElementsByTagName('li');
+        // for (var i = 0; i < a.length; i++) {
+        //     console.log(a[i]);
+        // }
+        // var a = document.getElementsByClassName('a');
+        // console.log(a);
+        // var firstli = document.querySelector('.a');
+        // console.log(firstli);
+        // var all = document.querySelectorAll('li');
+        // console.log(all);
+        // var bodyElm = document.body;
+        // console.log(bodyElm);
+        // var htmlElm = document.documentElement;
+        // console.log(htmlElm);
+
+        // var btn = document.getElementById('btn');
+        // btn.onclick = function() {
+        //     alert('def');
+        // }
+        // var div = document.getElementById('abc');
+        // div.onmouseover = function() {
+        //     console.log('selected');
+        // }
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var day = date.getDay();
+            var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            return '今天是：' + year + '年' + month + '月' + dates + '日' + week[day];
+        }
+        var btn = document.getElementById('btn');
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        btn.onclick = function() {
+            div.innerText = getDate();
+        }
+        p.innerText = getDate();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+！
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Computer(color, weight, brand, type) {
+        //     this.color = color;
+        //     this.weight = weight;
+        //     this.brand = brand;
+        //     this.type = type;
+        //     this.WatchMoving = function() {
+        //         console.log('看电影');
+        //     }
+        // }
+
+        // function Button(weight, high, bgcolor) {
+        //     this.weight = weight;
+        //     this.high = high;
+        //     this.bgcolor = bgcolor;
+        //     this.click = function(onclick) {
+        //         console.log('已点击');
+        //     }
+        // }
+
+        // function vehicle(weight, color, brand) {
+        //     this.weight = weight;
+        //     this.color = color;
+        //     this.brand = brand;
+        //     this.carryPeople = function() {
+        //         console.log('可以载人');
+        //     }
+        //     this.carryGoods = function() {
+        //         console.log('可以拉货');
+        //     }
+        //     this.plouging = function() {
+        //         console.log('可以耕田');
+        //     }
+        // }
+        // var comp = new Computer('black', 20, 'msi', 'laptop');
+        // comp.WatchMoving();
+        // for (var k in comp) {
+        //     console.log(comp[k]);
+        // }
+        // var btn = new Button(10, 10, 'red')
+        // btn.click();
+        // for (var k in btn) {
+        //     console.log(btn[k]);
+        // }
+        // var car = new vehicle(100, 'white', 'baoma')
+        // for (var k in car) {
+        //     console.log(car[k]);
+        // }
+        // car.carryPeople();
+        // car.carryGoods();
+        // car.plouging();
+
+
+        // var date = new Date();
+        // var year = date.getFullYear();
+        // var month = date.getMonth() + 1;
+        // var dates = date.getDate();
+        // var day = date.getDay();
+        // var weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        // console.log('今天是' + year + '年' + month + '月' + dates + '日 ' + weeks[day]);
+
+        // function getTime() {
+        //     var date = new Date();
+        //     var hour = date.getHours();
+        //     hour < 10 ? hour = '0' + hour : hour;
+        //     var minutes = date.getMinutes();
+        //     minutes < 10 ? minutes = '0' + minutes : minutes;
+        //     var second = date.getSeconds();
+        //     second < 10 ? second = '0' + second : second;
+        //     return hour + ':' + minutes + ':' + second;
+        // }
+        // console.log(getTime());
+
+        // function countDown(time) {
+        //     var nowTime = +new Date();
+        //     var inputTime = new Date(time);
+        //     var times = parseInt(inputTime - nowTime) / 1000;
+        //     var d = parseInt(times / 60 / 60 / 24);
+        //     d < 10 ? d = '0' + d : d;
+        //     var h = parseInt(times / 60 / 60 % 24);
+        //     h < 10 ? h = '0' + h : h;
+        //     var m = parseInt(times / 60 % 60);
+        //     m < 10 ? m = '0' + m : m;
+        //     var s = parseInt(times % 60);
+        //     s < 10 ? s = '0' + s : s;
+        //     return d + '天' + h + '时' + m + '分' + s + '秒';
+        // }
+        // var time = '2022-6-30';
+        // console.log(countDown(time));
+
+
+        // var arr = [];
+        // console.log(Array.isArray(arr));
+
+        // var arr = [1, 2, 3, 4, 5];
+        // console.log(arr.push(6, 7));
+        // console.log(arr);
+        // console.log(arr.unshift(-1, 0));
+        // console.log(arr);
+        // arr.pop();
+        // console.log(arr);
+        // arr.shift();
+        // console.log(arr);
+
+        // var arr = [100, 200, 300, 400, 500];
+        // var newArr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] >= 300) {
+        //         // newArr[newArr.length] = arr[i];
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        // var arr = [1, 22, 3, 44, 55];
+        // arr.reverse();
+        // console.log(arr);
+        // arr.sort(function(a, b) {
+        //     return a - b;
+        // });
+        // console.log(arr);
+
+
+        // var arr = [1, 1, 2, 2, 3, 3, 4, 5, 5, 4, 6];
+        // var newArr = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (newArr.indexOf(arr[i]) == -1) {
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        // var arr = [1, 2, 3];
+        // console.log(arr.toString());
+        // console.log(arr.join('&'));
+
+        // var str = "oxpaopodadsfafopoop";
+        // var index = str.indexOf('o');
+        // var num = 0;
+        // while (index != -1) {
+        //     console.log(index);
+        //     num++;
+        //     index = str.indexOf('o', index + 1);
+        // }
+        // console.log(num);
+
+        // var arr = ['red', 'blue', 'blakc', 'while', 'green', 'red'];
+        // var index = arr.indexOf('red');
+        // while (index != -1) {
+        //     console.log(index);
+        //     index = arr.indexOf('red', index + 1);
+        // }
+
+        // var str = 'abcde';
+        // console.log(str.charAt(1));
+        // console.log(str[2]);
+
+        // var str = "aaaabbbbbcccccddddddddd";
+        // var o = {};
+        // for (var i = 0; i < str.length; i++) {
+        //     var chars = str.charAt(i);
+        //     if (o[chars]) {
+        //         o[chars]++;
+        //     } else {
+        //         o[chars] = 1;
+        //     }
+        // }
+        // console.log(o);
+        // var max = 0;
+        // var ch = '';
+        // for (var k in o) {
+        //     if (o[k] > max) {
+        //         max = o[k];
+        //         ch = k;
+        //     }
+        // }
+        // console.log(ch);
+
+        // var str = 'abcde';
+        // console.log(str.concat('zzz'));
+        // console.log(str);
+        // var str = '改革春风吹满地';
+        // console.log(str.substr(2, 2));
+
+        // var str = 'abcdafadafdfdsafsafc';
+        // while (str.indexOf('f') != -1) {
+        //     str = str.replace('f', '*'); //原来的f已经被替换掉了，所以不用修改索引位置，
+        //     //replace()方法返回修改后的数组
+        // }
+        // console.log(str);
+
+        // var str = 'red,blud,green';
+        // console.log(str.split('&'));
+
+        var str = "agjdlkgjlkg";
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(ch);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        width: 500px;
+        margin: 100px auto;
+        text-align: center;
+        border-collapse: collapse;
+    }
+    
+    table tr th {
+        background: skyblue;
+        border: royalblue 1px solid;
+    }
+    
+    table tr td {
+        border: royalblue 1px solid;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox">全选</th>
+                <th>aaa</th>
+                <th>bbb</th>
+                <th>ccc</th>
+                <th>ddd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var all = document.querySelector('thead').querySelector('input');
+        var items = document.querySelector('tbody').querySelectorAll('input');
+        all.onclick = function() {
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = this.checked;
+            }
+        }
+        for (var i = 0; i < items.length; i++) {
+            items[i].onclick = function() {
+                var flag = true;
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked == false) {
+                        flag = false;
+                    }
+                }
+                all.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin: 100px auto;
+        border: black 1px solid;
+        border-collapse: collapse;
+        width: 500px;
+        text-align: center;
+    }
+    
+    th {
+        border: black 1px solid;
+        background-color: rgb(204, 197, 197);
+        height: 30px;
+    }
+    
+    td {
+        border: black 1px solid;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var datas = [{
+            name: 'aaa',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: 'bbb',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: 'ccc',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: 'ddd',
+            subject: 'JavaScript',
+            score: 88
+        }]
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = datas[i][k];
+                tr.appendChild(td);
+            }
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+        var dels = document.querySelectorAll('a');
+        for (var i = 0; i < dels.length; i++) {
+            dels[i].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

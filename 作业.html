@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .ipt {
+        border: pink 1px solid;
+    }
+    
+    #btn {
+        float: left;
+    }
+    
+    .display1 {
+        position: relative;
+        width: 100px;
+    }
+    
+    #abc {
+        background: green;
+        text-align: center;
+    }
+    
+    #order {
+        padding: 0;
+        margin-top: 0px;
+        background: pink;
+        width: 100px;
+        text-align: center;
+        list-style: none;
+        display: none;
+    }
+</style>
+
+<body id="light">
+    <input type="text" placeholder="用户名">
+    <br>
+    <div>
+        <button id="btn">x</button>
+        <img id="image" src="./img/advertisement.png">
+
+    </div>
+    <div class="display1">
+        <div id="abc">隐藏</div>
+        <ul id="order">
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+            <li>ddd</li>
+            <li>eee</li>
+        </ul>
+    </div>
+    <br>
+    <button id="power">关灯</button>
+    <script>
+        //第一题
+        var input = document.querySelector('input');
+        input.onfocus = function() {
+            this.placeholder = '';
+            input.className = 'ipt';
+        }
+        input.onblur = function() {
+                if (this.value == '') {
+                    this.placeholder = '手机';
+                }
+                input.className = '';
+            }
+            //第二题
+        var btn = document.getElementById('btn');
+        var img = document.getElementById('image');
+        btn.onclick = function() {
+                img.style.display = 'none';
+                btn.style.display = 'none';
+            }
+            //第三题
+        var aa = document.getElementById('abc');
+        console.log(aa);
+        var order = document.querySelector('#order');
+        aa.onmouseover = function() {
+            order.style.display = 'block';
+        }
+        aa.onmouseout = function() {
+                order.style.display = 'none';
+            }
+            //第四题
+        var power = document.getElementById('power');
+        var flag = 0;
+        power.onclick = function() {
+            var light = document.getElementById('light');
+            if (flag == 0) {
+                light.style.backgroundColor = 'black';
+                flag = 1;
+            } else {
+                light.style.backgroundColor = 'white';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #total {
+        margin: 100px auto;
+        width: 300px;
+        border: red 1px solid;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0px;
+        text-align: center;
+    }
+    
+    li {
+        float: left;
+        width: 60px;
+        background: gainsboro;
+    }
+    
+    .con {
+        display: none;
+    }
+</style>
+
+<body>
+    <div id="total">
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+            <li>ddd</li>
+        </ul>
+        <br>
+        <br>
+        <div class="con" style="display: block;">
+            aaaaaaaaaaaaa
+        </div>
+        <div class="con">
+            bbbbbbbbbbbbb
+        </div>
+        <div class="con">
+            ccccccccc
+        </div>
+        <div class="con">
+            ddddddddd
+        </div>
+    </div>
+
+    <script>
+        var li = document.querySelectorAll('li');
+        var con = document.querySelectorAll('.con');
+        for (var i = 0; i < li.length; i++) {
+            li[i].setAttribute('index', i);
+
+            li[i].onclick = function() {
+                index = this.getAttribute('index');
+                for (var i = 0; i < li.length; i++) {
+                    con[i].style.display = 'none';
+                    li[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'red';
+                con[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //要写on
+        // document.onkeydown=function(){
+
+        // }
+        //keydown 按键按下后触发，能识别功能键，例如 Ctrl Shift 箭头等功能按键。
+        //不写on
+        // document.addEventListener('keydown', function() {
+        //         console.log('按下了down');
+        //     })
+        //keypress 按键按下后触发，不能识别功能键，例如Ctrl Shift 箭头等功能按键。
+        // document.addEventListener('keypress', function() {
+        //     console.log('按下了press');
+        // })
+        // document.addEventListener('keyup', function() {
+        //         console.log('弹起了');
+        //     })
+        //三个时间的执行顺序：keydown -> keypress -> keyup
+        // document.addEventListener('keydown', function(e) {
+        //     console.log(e.key);
+        //     if (e.key == 'A') {
+        //         alert('A');
+        //     } else {
+        //         alert('不是A');
+        //     }
+        // })
+        // document.addEventListener('keypress', function(e) {
+        //     console.log(e.key);
+        //     if (e.key == 'A') {
+        //         alert('A');
+        //     } else {
+        //         alert('不是A');
+        //     }
+        // })
+
+        //用事件对象中的keyCord属性可以得到相应按键的ASCII值
+        //keydown 和 keyup不区分大小写， A 和 a 都输出65
+        //keypress事件区分大小写 A 65 ，a 97
+        document.addEventListener('keyup', function(e) {
+            console.log('up:' + e.keyCode);
+        })
+        document.addEventListener('keypress', function(e) {
+            console.log('down:' + e.keyCode);
+        })
+    </script>
+</body>
+
+</html>

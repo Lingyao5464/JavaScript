@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>删除</button>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        var li1 = ul.children[0];
+        btn.onclick = function() {
+                if (ul.children.length == 0) {
+                    this.disabled = true;
+                } else {
+                    ul.removeChild(ul.children[0]);
+                }
+            }
+            // ul.appendChild(li1.cloneNode(true));
+        ul.insertBefore(li1.cloneNode(true), ul.children[0]);
+    </script>
+</body>
+
+</html>

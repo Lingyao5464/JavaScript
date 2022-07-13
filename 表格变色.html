@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        margin: 100px auto;
+        width: 500px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+    
+    thead th {
+        border-top: blue 1px solid;
+        border-bottom: blue 1px solid;
+        background: #999;
+    }
+    
+    tbody td {
+        border-top: blue 1px solid;
+        border-bottom: blue 1px solid;
+    }
+    
+    .bg {
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>aaa</th>
+                <th>bbb</th>
+                <th>ccc</th>
+                <th>ddd</th>
+                <th>eee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+                <td>eee</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+                <td>eee</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+                <td>eee</td>
+            </tr>
+            <tr>
+                <td>aaa</td>
+                <td>bbb</td>
+                <td>ccc</td>
+                <td>ddd</td>
+                <td>eee</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var items = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < items.length; i++) {
+            items[i].onmouseover = function() {
+                this.className = 'bg';
+            }
+            items[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
