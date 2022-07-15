@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 500px;
+        height: 500px;
+        margin: 100px;
+        background: skyblue;
+    }
+</style>
+
+<body>
+    <div></div>
+    <script>
+        var box = document.querySelector('div');
+        box.addEventListener('mousemove', function(e) {
+            // console.log(e.pageX);
+            // console.log(e.pageY);
+            // console.log(this.offsetLeft);
+            // console.log(this.offsetTop);
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            box.innerHTML = 'X坐标为：' + x + ' Y坐标为：' + y;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        margin: 100px 300px;
+    }
+    
+    span {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: black;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+    }
+</style>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = new Date('2022-7-15 17:00:00');
+        countDown(); //先调用一次这个函数，防止第一次刷新页面有空白
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date();
+            var times = parseInt(inputTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60);
+            h < 10 ? h = '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m < 10 ? m = '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s < 10 ? s = '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>

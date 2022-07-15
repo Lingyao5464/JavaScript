@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .imgBox {
+        width: 500px;
+        margin: 100px 200px;
+        border: #666 1px solid;
+        position: relative;
+    }
+    
+    .mask {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: #fede4f;
+        opacity: .5;
+        cursor: move;
+        display: none;
+    }
+    
+    .big {
+        position: absolute;
+        width: 500px;
+        height: 600px;
+        left: 720px;
+        top: 100px;
+        background: red;
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="imgBox">
+        <div class="mask"></div>
+        <img src="./img/sphone.png" alt="">
+    </div>
+    <div class="big"><img src="./img/phone.png" alt=""></div>
+</body>
+
+</html>

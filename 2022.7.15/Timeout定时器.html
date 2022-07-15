@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //在window调用时可省略
+    //window.setTime(调用函数（可以直接写函数或是函数名），延迟时间（毫秒）)
+    setTimeout(function() {
+        console.log('时间到');
+    }, 3000)
+    setTimeout(time1, 4000);
+    setTimeout('time2()', 5000);
+
+    function time1() {
+        console.log('时间到22');
+    }
+
+    //在window.onload中会报错
+    function time2() {
+        console.log('时间到33');
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = [{
+            name: 'aaa',
+            gender: 'male',
+            age: 20
+        }, {
+            name: 'aaa',
+            gender: 'male',
+            age: 20
+        }]
+        for (var i = 0; i < obj.length; i++) {
+            for (var k in obj[i]) {
+                console.log(obj[i][k]);
+            }
+        }
+    </script>
+</body>
+
+</html>
