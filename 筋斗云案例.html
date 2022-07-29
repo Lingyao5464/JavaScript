@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nav {
+        position: relative;
+        height: 50px;
+        background: skyblue;
+        /* line-height: 40px; */
+    }
+    
+    .cloud {
+        position: absolute;
+        display: inline-block;
+        top: -15px;
+        left: 0;
+        width: 100px;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    .cloud img {
+        width: 100%;
+        height: 80px;
+    }
+    
+    ul {
+        padding: 0;
+        position: absolute;
+        list-style: none;
+        z-index: 2;
+        top: -10px;
+        left: 0;
+    }
+    
+    li {
+        padding: 6px 20px;
+        float: left;
+        color: white;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-family: '微软雅黑';
+    }
+</style>
+<script src="animate.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        var cloud = document.querySelector('.cloud');
+        var ul = document.querySelector('ul');
+        var lis = ul.querySelectorAll('li');
+        //current作为筋斗云的起始位置
+        var current = 0;
+        for (var i = 0; i < lis.length; i++) {
+            //鼠标经过当前li的位置设为目标值
+            lis[i].addEventListener('mouseenter', function() {
+                    animate(cloud, this.offsetLeft);
+                })
+                //鼠标离开就回到起始位置
+            lis[i].addEventListener('mouseleave', function() {
+                    animate(cloud, current);
+                })
+                //当鼠标点击，就把当前的位置作为目标值
+            lis[i].addEventListener('click', function() {
+                current = this.offsetLeft;
+            })
+        }
+    })
+</script>
+
+<body>
+    <div class="nav">
+        <span class="cloud"><img src="./img/cloud.png" alt=""></span>
+        <ul>
+            <li class="current">
+                <a href="#">首页新闻</a>
+            </li>
+            <li>
+                <a href="#">师资力量</a>
+            </li>
+            <li>
+                <a href="#">活动策划</a>
+            </li>
+            <li>
+                <a href="#">企业文化</a>
+            </li>
+            <li>
+                <a href="#">招聘信息</a>
+            </li>
+            <li>
+                <a href="#">公司简介</a>
+            </li>
+            <li>
+                <a href="#">其它其它</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

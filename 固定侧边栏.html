@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .total {
+        position: relative;
+        width: 1600px;
+        margin: auto;
+    }
+    
+    .header {
+        background: purple;
+        height: 300px;
+        margin-top: 10px;
+    }
+    
+    .banner {
+        background: greenyellow;
+        height: 400px;
+        margin-top: 10px;
+    }
+    
+    .main {
+        background: skyblue;
+        height: 1000px;
+        margin-top: 10px;
+    }
+    
+    .goBack {
+        display: none;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    .slider-bar {
+        width: 80px;
+        height: 200px;
+        background: pink;
+        position: absolute;
+        right: 70px;
+        top: 700px;
+    }
+</style>
+
+<body>
+
+    <div class="total">
+        <div class="header">头部区域</div>
+        <div class="banner">banner区域</div>
+        <div class="main">主体部分</div>
+    </div>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <script>
+        var sliderBar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+
+        var bannerTop = banner.offsetTop;
+        var sliderBarTop = sliderBar.offsetTop - bannerTop;
+        var mainTop = main.offsetTop;
+        console.log(bannerTop);
+        document.addEventListener('scroll', function() {
+            // console.log(window.pageYOffset);
+            if (window.pageYOffset >= bannerTop) {
+                sliderBar.style.position = 'fixed';
+                sliderBar.style.top = sliderBarTop + 'px';
+            } else {
+                sliderBar.style.position = 'absolute';
+                sliderBar.style.top = '700px';
+            }
+            if (window.pageYOffset >= mainTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        })
+        goBack.addEventListener('click', function() {
+            //里面的x,y不用写单位
+            // window.scroll(0, 0);
+            //因为是窗口滚动，所以对象是window
+            animate(window, 0);
+        })
+
+        function animate(obj, target, callback) {
+            //不断点击按钮，元素的速度会越来越快，因为开启了太多的定时器，
+            //只有一个定时器执行可以避免以上问题
+            //清除原先的定时器，只保留一个定时器执行
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                //缓动动画效果
+                //步长值写到定时器里面
+                //因为有步长的原因，往回走是为负数，所以可以实现来回移动
+                //步长改为整数，不要出现小数
+                // var step = Math.ceil((target - window.pageYOffset) / 10);
+                var step = (target - window.pageYOffset) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    // if (callback)
+                    //     callback();
+                    callback && callback();
+                }
+                // obj.style.left = window.pageYOffset + step + 'px';
+                window.scroll(0, window.pageYOffset + step);
+            }, 30);
+        }
+    </script>
+</body>
+
+</html>
