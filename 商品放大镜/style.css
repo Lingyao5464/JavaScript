@@ -1,0 +1,34 @@
+.imgBox {
+    width: 500px;
+    height: 500px;
+    margin: 100px 200px;
+    border: #666 1px solid;
+    position: relative;
+}
+
+.mask {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: #fede4f;
+    opacity: .5;
+    cursor: move;
+    display: none;
+}
+
+.big {
+    position: absolute;
+    width: 850px;
+    height: 800px;
+    left: 720px;
+    top: 100px;
+    /* background: red; */
+    display: none;
+    overflow: hidden;
+}
+
+.bigImg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
