@@ -1,0 +1,67 @@
+.container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.img-box {
+    padding: 0;
+    position: absolute;
+    width: 500%;
+    list-style: none;
+    /* display: none; */
+}
+
+.img-box li {
+    float: left;
+}
+
+.img-box img {
+    width: 1281;
+    height: 720px;
+}
+
+.arrow-l,
+.arrow-r {
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    top: 360px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.342);
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.arrow-r {
+    right: 0;
+}
+
+.point {
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.404);
+    position: absolute;
+    list-style: none;
+    bottom: 60px;
+    left: 580px;
+    border-radius: 30%;
+}
+
+.point li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.39);
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.current {
+    background-color: orange;
+}
