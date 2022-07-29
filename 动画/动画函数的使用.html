@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .silderbar {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 0px;
+        top: 100px;
+        background: purple;
+        color: white;
+        line-height: 60px;
+        font-size: x-large;
+    }
+    
+    .con {
+        position: absolute;
+        top: 0px;
+        right: -100px;
+        width: 100px;
+        height: 60px;
+        background: rgb(216, 85, 194);
+    }
+</style>
+<script src="./animate.js"></script>
+
+<body>
+    <div class="silderbar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var silderBar = document.querySelector('.silderbar');
+        var con = document.querySelector('.con');
+        var spann = document.querySelector('span');
+        silderBar.addEventListener('mouseenter', function() {
+            animate(con, -100, function() {
+                spann.innerHTML = "→";
+            });
+        })
+        silderBar.addEventListener('mouseleave', function() {
+            animate(con, 100, function() {
+                spann.innerHTML = "←";
+            });
+        })
+    </script>
+</body>
+
+</html>
